@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+package standard;
+
+// 状态
+enum State {
+  UNKNOWN = 0 ;   // 未知
+  SUCCESS = 1 ;   // 成功
+  FAILURE = 2 ;   // 失败
+
+  EXPIRED = 3 ; // 数据过期了
+  NOT_ACTIVE = 4 ; // 数据未到生效期
+
+  SERVICE_ERROR = 5 ;   // 服务错误
+  PARAMS_INVALID = 6 ;   // 参数不合法
+  ILLEGAL_REQUEST = 7 ;   // 非法请求
+
+  DB_OPERATION_FATLURE = 8 ;    // 数据库操作失败
+}
+
+// 数据在销毁时间前可查询到
+// 生效时间之前
+
+// 单位数据
+message UnitData {
+  string Body = 1 ; // 数据
+  string ExpiryTime = 3 ; // 失效时间
+  string CreatedTime = 4 ; // 创建时间
+  string DestroyTime = 5 ; // 销毁时间
+  string EffectiveTime = 6 ; // 生效时间
+}
+
+message CreateUnitDataRequest {
+  string Body = 1 ; // 数据
+  string ExpiryTime = 2 ; // 失效时间
+  string DestroyTime = 3 ; // 销毁时间
+  string EffectiveTime = 4 ; // 生效时间
+}
+
+message CreateUnitDataResponse {
+  string Key = 1 ;
+  State  State = 2 ;
+  string Message = 3 ;
+}
+message GetUnitDataByKeyRequest {
+  string Key = 1 ;
+}
+message GetUnitDataByKeyResponse {
+  State State = 1 ;
+  string Message = 2 ;
+  UnitData Data = 3 ;
+}
+
+message DestroyUnitDataByKeyRequest {
+  string Key = 1 ;
+}
+message DestroyUnitDataByKeyResponse {
+  State State = 1 ;
+  string Message = 2 ;
+}
+
+message UpdateUnitDataBodyByKeyRequest {
+  string Key = 1 ;
+  string Body = 2 ;
+}
+
+message UpdateUnitDataBodyByKeyResponse {
+  State State = 1 ;
+  string Message = 2 ;
+}
+message UpdateUnitDataExpiryTimeByKeyRequest {
+  string Key = 1 ;
+  string ExpiryTime = 2 ;
+}
+message UpdateUnitDataExpiryTimeByKeyResponse {
+  State State = 1 ;
+  string Message = 2 ;
+}
+message UpdateUnitDataDestroyTimeByKeyRequest {
+  string Key = 1 ;
+  string DestroyTime = 2 ;
+}
+message UpdateUnitDataDestroyTimeByKeyResponse {
+  State State = 1 ;
+  string Message = 2 ;
+}
+message UpdateUnitDataEffectiveTimeByKeyRequest {
+  string Key = 1 ;
+  string EffectiveTime = 2 ;
+}
+message UpdateUnitDataEffectiveTimeByKeyResponse {
+  State State = 1 ;
+  string Message = 2 ;
+}
+
+
+// 在里面流通的是 `UnitData`
+// 每个 `UnitData` 有自己的一些生命周期设定
+// 可以创建一个 `UnitData` 并获得这个 `UnitData` 的对应加密 number
+// 或者通过一个的特定的 `UnitData` 的 number 在有效的生命周期内获取这个数据
+service Switch {
+  rpc CreateUnitData(CreateUnitDataRequest)returns(CreateUnitDataResponse){} // 创建一个数据
+  rpc GetUnitDataByKey(GetUnitDataByKeyRequest)returns(GetUnitDataByKeyResponse){} // 根据 key 获取数据
+  rpc DestroyUnitDataByKey(DestroyUnitDataByKeyRequest)returns(DestroyUnitDataByKeyResponse){} // 立即销毁一个数据
+  rpc UpdateUnitDataBodyByKey(UpdateUnitDataBodyByKeyRequest)returns(UpdateUnitDataBodyByKeyResponse){} // 更新指定 key 的数据
+  rpc UpdateUnitDataExpiryTimeByKey(UpdateUnitDataExpiryTimeByKeyRequest)returns(UpdateUnitDataExpiryTimeByKeyResponse){} // 更新指定 key 的失效时间
+  rpc UpdateUnitDataDestroyTimeByKey(UpdateUnitDataDestroyTimeByKeyRequest)returns(UpdateUnitDataDestroyTimeByKeyResponse){} // 更新指定 key 的销毁时间
+  rpc UpdateUnitDataEffectiveTimeByKey(UpdateUnitDataEffectiveTimeByKeyRequest)returns(UpdateUnitDataEffectiveTimeByKeyResponse){} // 更新指定 key 的生效时间
+}
