@@ -294,12 +294,13 @@
 | UNKNOWN | 0 | 未知 |
 | SUCCESS | 1 | 成功 |
 | FAILURE | 2 | 失败 |
-| EXPIRED | 3 | 数据过期了 |
-| NOT_ACTIVE | 4 | 数据未到生效期 |
-| SERVICE_ERROR | 5 | 服务错误 |
-| PARAMS_INVALID | 6 | 参数不合法 |
-| ILLEGAL_REQUEST | 7 | 非法请求 |
-| DB_OPERATION_FATLURE | 8 | 数据库操作失败 |
+| SERVICE_ERROR | 3 | 服务错误 |
+| PARAMS_INVALID | 4 | 参数不合法 |
+| ILLEGAL_REQUEST | 5 | 非法请求 |
+| UNIT_DATA_EXPIRED | 6 | 数据过期了 |
+| UNIT_DATA_NOT_EXIST | 7 | 数据不存在 |
+| UNIT_DATA_NOT_ACTIVE | 8 | 数据未到生效期 |
+| DB_OPERATION_FATLURE | 9 | 数据库操作失败 |
 
 
  

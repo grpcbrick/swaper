@@ -19,13 +19,13 @@ func createDataTable() error {
 	matserStmp := sqldb.CreateStmt(strings.Join([]string{
 		"CREATE TABLE IF NOT EXISTS `" + unitDataTableName + "`",
 		"(",
-		"`Key` varchar NOT NULL COMMENT 'Key',",
-		"`Body` varchar COMMENT '数据',",
-		"`ExpiryTime` datetime NOT NULL COMMENT '失效时间', ",
-		"`DestroyTime` datetime NOT NULL COMMENT '销毁时间',",
-		"`EffectiveTime` datetime NOT NULL COMMENT '生效时间',",
-		"`CreatedTime` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',",
-		"`UpdatedTime` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',",
+		"`Key` VARCHAR(128) NOT NULL COMMENT 'Key',",
+		"`Body` BLOB DEFAULT NULL COMMENT '数据',",
+		"`ExpiryTime` DATETIME NOT NULL COMMENT '失效时间', ",
+		"`DestroyTime` DATETIME NOT NULL COMMENT '销毁时间',",
+		"`EffectiveTime` DATETIME NOT NULL COMMENT '生效时间',",
+		"`CreatedTime` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',",
+		"`UpdatedTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',",
 		"PRIMARY KEY (`Key`)",
 		")",
 		"ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;",
@@ -40,7 +40,7 @@ func createDataTable() error {
 		"(",
 		"`Index` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Index',",
 		"`Key` varchar  COMMENT 'Key',",
-		"`Data` varchar NOT NULL COMMENT '数据',",
+		"`Body` BLOB COMMENT '数据',",
 		"`ExpiryTime` datetime NOT NULL COMMENT '失效时间', ",
 		"`DestroyTime` datetime NOT NULL COMMENT '销毁时间',",
 		"`EffectiveTime` datetime NOT NULL COMMENT '生效时间',",
@@ -255,18 +255,18 @@ func UpdateUnitDataBodyByKey(key string, body string) error {
 	return UpdataUnitDataFieldByKey(key, map[string]interface{}{"Body": body})
 }
 
-// UpdateDataExpiryTimeByKey 更新过期时间
-func UpdateDataExpiryTimeByKey(key string, expiryTime time.Time) error {
+// UpdateUintDataExpiryTimeByKey 更新过期时间
+func UpdateUintDataExpiryTimeByKey(key string, expiryTime time.Time) error {
 	return UpdataUnitDataFieldByKey(key, map[string]interface{}{"ExpiryTime": expiryTime})
 }
 
-// UpdateDataDestroyTimeByKey 更新销毁时间
-func UpdateDataDestroyTimeByKey(key string, destroyTime time.Time) error {
+// UpdateUintDataDestroyTimeByKey 更新销毁时间
+func UpdateUintDataDestroyTimeByKey(key string, destroyTime time.Time) error {
 	return UpdataUnitDataFieldByKey(key, map[string]interface{}{"DestroyTime": destroyTime})
 }
 
-// UpdateDataEffectiveTimeByKey 更新生效时间
-func UpdateDataEffectiveTimeByKey(key string, dataEffective time.Time) error {
+// UpdateUintDataEffectiveTimeByKey 更新生效时间
+func UpdateUintDataEffectiveTimeByKey(key string, dataEffective time.Time) error {
 	return UpdataUnitDataFieldByKey(key, map[string]interface{}{"EffectiveTime": dataEffective})
 }
 
