@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/grpcbrick/switch/dao"
-	"github.com/grpcbrick/switch/standard"
-	validators "github.com/grpcbrick/switch/validators"
+	"github.com/grpcbrick/swaper/dao"
+	"github.com/grpcbrick/swaper/standard"
+	validators "github.com/grpcbrick/swaper/validators"
 )
 
 var timeLayout = time.RFC850

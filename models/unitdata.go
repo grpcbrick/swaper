@@ -3,7 +3,7 @@ package models
 import (
 	"database/sql"
 
-	"github.com/grpcbrick/switch/standard"
+	"github.com/grpcbrick/swaper/standard"
 )
 
 // UnitData 数据

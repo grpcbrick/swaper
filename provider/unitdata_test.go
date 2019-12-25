@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/grpcbrick/switch/dao"
-	"github.com/grpcbrick/switch/standard"
+	"github.com/grpcbrick/swaper/dao"
+	"github.com/grpcbrick/swaper/standard"
 	"github.com/yinxulai/goutils/config"
 	"github.com/yinxulai/goutils/sqldb"
 )

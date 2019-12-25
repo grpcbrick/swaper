@@ -3,9 +3,9 @@ package main
 import (
 	"net"
 
-	"github.com/grpcbrick/account/dao"
-	"github.com/grpcbrick/account/provider"
-	"github.com/grpcbrick/account/standard"
+	"github.com/grpcbrick/swaper/dao"
+	"github.com/grpcbrick/swaper/provider"
+	"github.com/grpcbrick/swaper/standard"
 	"github.com/yinxulai/goutils/config"
 	"github.com/yinxulai/goutils/grpc/interceptor"
 	"github.com/yinxulai/goutils/sqldb"
@@ -27,6 +27,6 @@ func main() {
 		panic(err)
 	}
 	grpcServer := grpc.NewServer(interceptor.NewCalllogs()...)
-	standard.RegisterAccountServer(grpcServer, provider.NewService())
+	standard.RegisterSwaperServer(grpcServer, provider.NewService())
 	panic(grpcServer.Serve(lis))
 }

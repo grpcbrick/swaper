@@ -6,7 +6,7 @@
 import * as standard_pb from "./standard_pb";
 import * as grpc from "grpc";
 
-interface ISwitchService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
+interface ISwaperService extends grpc.ServiceDefinition<grpc.UntypedServiceImplementation> {
   createUnitData: grpc.MethodDefinition<standard_pb.CreateUnitDataRequest, standard_pb.CreateUnitDataResponse>;
   getUnitDataByKey: grpc.MethodDefinition<standard_pb.GetUnitDataByKeyRequest, standard_pb.GetUnitDataByKeyResponse>;
   destroyUnitDataByKey: grpc.MethodDefinition<standard_pb.DestroyUnitDataByKeyRequest, standard_pb.DestroyUnitDataByKeyResponse>;
@@ -16,9 +16,9 @@ interface ISwitchService extends grpc.ServiceDefinition<grpc.UntypedServiceImple
   updateUnitDataEffectiveTimeByKey: grpc.MethodDefinition<standard_pb.UpdateUnitDataEffectiveTimeByKeyRequest, standard_pb.UpdateUnitDataEffectiveTimeByKeyResponse>;
 }
 
-export const SwitchService: ISwitchService;
+export const SwaperService: ISwaperService;
 
-export class SwitchClient extends grpc.Client {
+export class SwaperClient extends grpc.Client {
   constructor(address: string, credentials: grpc.ChannelCredentials, options?: object);
   createUnitData(argument: standard_pb.CreateUnitDataRequest, callback: grpc.requestCallback<standard_pb.CreateUnitDataResponse>): grpc.ClientUnaryCall;
   createUnitData(argument: standard_pb.CreateUnitDataRequest, metadataOrOptions: grpc.Metadata | grpc.CallOptions | null, callback: grpc.requestCallback<standard_pb.CreateUnitDataResponse>): grpc.ClientUnaryCall;

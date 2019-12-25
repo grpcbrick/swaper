@@ -99,7 +99,7 @@ message UpdateUnitDataEffectiveTimeByKeyResponse {
 // 每个 `UnitData` 有自己的一些生命周期设定
 // 可以创建一个 `UnitData` 并获得这个 `UnitData` 的对应加密 number
 // 或者通过一个的特定的 `UnitData` 的 number 在有效的生命周期内获取这个数据
-service Switch {
+service Swaper {
   rpc CreateUnitData(CreateUnitDataRequest)returns(CreateUnitDataResponse){} // 创建一个数据
   rpc GetUnitDataByKey(GetUnitDataByKeyRequest)returns(GetUnitDataByKeyResponse){} // 根据 key 获取数据
   rpc DestroyUnitDataByKey(DestroyUnitDataByKeyRequest)returns(DestroyUnitDataByKeyResponse){} // 立即销毁一个数据

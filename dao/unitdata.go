@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grpcbrick/switch/models"
+	"github.com/grpcbrick/swaper/models"
 	"github.com/yinxulai/goutils/sqldb"
 )
 

@@ -849,50 +849,50 @@ func init() { proto.RegisterFile("standard.proto", fileDescriptor_0b3e239150a6a1
 
 var fileDescriptor_0b3e239150a6a10f = []byte{
 	// 700 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0xdb, 0x4e, 0xdb, 0x4c,
-	0x10, 0xc7, 0x71, 0x12, 0x02, 0x0c, 0x22, 0x98, 0x01, 0x3e, 0x22, 0x7f, 0x2d, 0xa4, 0x16, 0x50,
-	0xda, 0x4a, 0xd0, 0xa6, 0x4f, 0x60, 0x92, 0x05, 0x59, 0x04, 0x87, 0xfa, 0x40, 0x91, 0xb8, 0xb0,
-	0x0c, 0x59, 0x20, 0xaa, 0x4a, 0xd2, 0x78, 0x7b, 0xc8, 0x6d, 0xab, 0x5e, 0xf5, 0xb2, 0x2f, 0xd1,
-	0xeb, 0x3e, 0x48, 0x9f, 0xa9, 0xb2, 0x8d, 0x0f, 0x71, 0xec, 0xd8, 0x95, 0x72, 0x97, 0xdd, 0xfd,
-	0xcf, 0xcc, 0x6f, 0xc6, 0xbb, 0x7f, 0x80, 0x8a, 0xcd, 0xac, 0xfb, 0x8e, 0x35, 0xe8, 0xec, 0xf7,
-	0x07, 0x3d, 0xd6, 0xc3, 0x79, 0x7f, 0x2d, 0xfe, 0xe2, 0x60, 0xde, 0xb8, 0xef, 0xb2, 0xa6, 0xc5,
-	0x2c, 0x44, 0x28, 0x1d, 0xf6, 0x3a, 0xc3, 0x2a, 0x57, 0xe3, 0xf6, 0x16, 0x54, 0xf7, 0x37, 0x6e,
-	0x02, 0x90, 0x2f, 0xfd, 0xee, 0x60, 0xa8, 0x77, 0xdf, 0xd3, 0x6a, 0xd1, 0x3d, 0x89, 0xec, 0x60,
-	0x0d, 0x16, 0x1b, 0x03, 0x6a, 0x31, 0xda, 0x71, 0x05, 0x25, 0x57, 0x10, 0xdd, 0x72, 0x14, 0x4d,
-	0x6a, 0xb3, 0x41, 0xcf, 0x4b, 0x31, 0xeb, 0x29, 0x22, 0x5b, 0xb8, 0x0d, 0x4b, 0xe4, 0xe6, 0x86,
-	0x5e, 0xb3, 0xee, 0x27, 0xea, 0x6a, 0xca, 0xae, 0x66, 0x74, 0x53, 0xfc, 0xc9, 0xc1, 0xba, 0x97,
-	0xd7, 0x07, 0x56, 0xe9, 0x87, 0x8f, 0xd4, 0x66, 0x39, 0xb8, 0x0b, 0x49, 0xdc, 0x51, 0xaa, 0x62,
-	0x0e, 0xaa, 0x52, 0x12, 0xd5, 0x3b, 0xf8, 0x2f, 0x0e, 0x65, 0xf7, 0x7b, 0xf7, 0x36, 0x45, 0x1e,
-	0x8a, 0x27, 0xd4, 0x87, 0x72, 0x7e, 0xe2, 0x0e, 0xcc, 0x6a, 0xcc, 0x62, 0x1e, 0x4e, 0xa5, 0xbe,
-	0xbc, 0x1f, 0x7c, 0x16, 0x77, 0x5b, 0xf5, 0x4e, 0xb1, 0x0a, 0x73, 0xa7, 0xd4, 0xb6, 0xad, 0x5b,
-	0x1f, 0xcb, 0x5f, 0x8a, 0x2f, 0x60, 0xe3, 0x98, 0x32, 0xbf, 0xd2, 0xe1, 0xf0, 0x84, 0x0e, 0xfd,
-	0x19, 0x8c, 0x55, 0x13, 0xbf, 0x71, 0x50, 0x1d, 0x57, 0x3f, 0xc0, 0x05, 0x28, 0x5c, 0x5e, 0x94,
-	0xc2, 0x08, 0x0a, 0xee, 0x42, 0xc9, 0xc9, 0xea, 0x12, 0x2e, 0xd6, 0x31, 0x8c, 0x0f, 0xe6, 0xe0,
-	0x9e, 0x8b, 0x07, 0xf0, 0xff, 0xc3, 0x50, 0x73, 0x62, 0x9b, 0xf0, 0x28, 0x39, 0x60, 0x4a, 0xe4,
-	0xe2, 0x11, 0x6c, 0x1a, 0xfd, 0x4e, 0xe4, 0x8b, 0x39, 0xf7, 0x65, 0x32, 0x54, 0x70, 0xc3, 0x0a,
-	0xe1, 0x0d, 0x13, 0xaf, 0x60, 0x2b, 0x35, 0xcf, 0xb4, 0x58, 0x2f, 0x60, 0x7b, 0xb4, 0x46, 0x78,
-	0x83, 0x33, 0x88, 0x33, 0xee, 0xbf, 0x78, 0x07, 0x3b, 0x19, 0x99, 0xa7, 0xd5, 0xc3, 0x65, 0xbc,
-	0x52, 0xe4, 0x91, 0x65, 0x34, 0x11, 0x7b, 0xa4, 0x85, 0xb1, 0x47, 0x2a, 0x76, 0x61, 0x37, 0x2b,
-	0xf9, 0xb4, 0xfa, 0xb0, 0xe0, 0x69, 0x6c, 0x62, 0x51, 0x23, 0xc8, 0xe8, 0x64, 0xcc, 0x4c, 0x0a,
-	0xc9, 0x66, 0xb2, 0x97, 0x5d, 0x62, 0x4a, 0xfd, 0x3c, 0xff, 0xc3, 0x3d, 0x64, 0xc0, 0x45, 0x98,
-	0x33, 0x94, 0x13, 0xa5, 0xfd, 0x56, 0xe1, 0x67, 0x9c, 0x85, 0x66, 0x34, 0x1a, 0x44, 0xd3, 0x78,
-	0xce, 0x59, 0x1c, 0x49, 0x72, 0xcb, 0x50, 0x09, 0x5f, 0xc0, 0x15, 0x58, 0xd2, 0x88, 0x7a, 0x2e,
-	0x37, 0x88, 0x49, 0x54, 0xb5, 0xad, 0xf2, 0x45, 0x44, 0xa8, 0x9c, 0x49, 0xaa, 0x74, 0xaa, 0x99,
-	0xb2, 0x72, 0x2e, 0xb5, 0xe4, 0x26, 0x5f, 0xc2, 0x55, 0x58, 0x96, 0x5b, 0x2d, 0x72, 0x2c, 0xb5,
-	0x4c, 0x95, 0xbc, 0x31, 0x88, 0xa6, 0xf3, 0xb3, 0xb8, 0x0e, 0x2b, 0x86, 0x22, 0xeb, 0x66, 0x53,
-	0xd2, 0x25, 0x93, 0x5c, 0x9c, 0xc9, 0x2a, 0x69, 0xf2, 0x65, 0xdc, 0x80, 0xd5, 0x70, 0x5b, 0x69,
-	0xeb, 0x26, 0xb9, 0x90, 0x35, 0x9d, 0x9f, 0xc3, 0x2a, 0xac, 0x8d, 0x1e, 0x48, 0x0d, 0x5d, 0x3e,
-	0x27, 0xfc, 0xbc, 0x73, 0xd2, 0x3c, 0x34, 0xdb, 0x67, 0x44, 0x95, 0x74, 0xb9, 0xad, 0x98, 0x47,
-	0x92, 0xee, 0xf2, 0x2d, 0xd4, 0x7f, 0x97, 0xa1, 0xac, 0x7d, 0xee, 0xb2, 0xeb, 0x3b, 0x34, 0xa0,
-	0x32, 0xea, 0xca, 0xb8, 0x15, 0xce, 0x27, 0xf1, 0x8f, 0x88, 0x50, 0x4b, 0x17, 0x78, 0x13, 0x17,
-	0x67, 0xf0, 0x12, 0xf8, 0xb8, 0xa3, 0xe2, 0x93, 0x30, 0x2e, 0xc5, 0x9b, 0x05, 0x71, 0x92, 0x24,
-	0x48, 0x7e, 0x0b, 0x6b, 0x49, 0xc6, 0x87, 0x3b, 0x61, 0xf4, 0x04, 0x27, 0x15, 0x76, 0xb3, 0x64,
-	0x41, 0xa1, 0x3e, 0x6c, 0xa4, 0x18, 0x17, 0xee, 0x45, 0x7c, 0x7c, 0xa2, 0x47, 0x0a, 0xcf, 0x72,
-	0x28, 0x83, 0x8a, 0x5f, 0x39, 0x78, 0x3c, 0xd1, 0x6d, 0x70, 0x3f, 0x2d, 0x5d, 0xb2, 0xe1, 0x09,
-	0x07, 0xb9, 0xf5, 0x01, 0xc4, 0x77, 0x2e, 0x6e, 0xfc, 0x71, 0xaf, 0xc0, 0xd4, 0xac, 0x29, 0x96,
-	0x25, 0xbc, 0xcc, 0x1f, 0x10, 0x70, 0xfc, 0xe0, 0xa0, 0x96, 0xf5, 0xca, 0xf1, 0x55, 0x6a, 0x7f,
-	0x69, 0xa6, 0x23, 0xd4, 0xff, 0x25, 0xc4, 0xa7, 0xb9, 0x2a, 0xbb, 0xff, 0x11, 0xbe, 0xfe, 0x1b,
-	0x00, 0x00, 0xff, 0xff, 0x95, 0x2d, 0xea, 0xc3, 0x23, 0x0a, 0x00, 0x00,
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0xdd, 0x4e, 0xdb, 0x4c,
+	0x10, 0x86, 0x71, 0x12, 0x02, 0x0c, 0x22, 0x98, 0x01, 0x3e, 0x22, 0x7f, 0x2d, 0xa4, 0x16, 0x50,
+	0xda, 0x4a, 0xd0, 0xa6, 0x57, 0x60, 0x92, 0x05, 0x59, 0x04, 0x87, 0xae, 0x6d, 0x8a, 0xc4, 0x81,
+	0x65, 0x9a, 0x85, 0x46, 0x55, 0x49, 0x1a, 0xbb, 0x3f, 0x39, 0x6d, 0xd5, 0xa3, 0x1e, 0xf6, 0x26,
+	0x7a, 0xdc, 0x0b, 0xe9, 0x35, 0x55, 0xb6, 0xe3, 0x9f, 0x38, 0x76, 0xec, 0x4a, 0x39, 0xcb, 0xee,
+	0xbe, 0x33, 0xf3, 0xcc, 0x78, 0xf7, 0x05, 0xa8, 0x58, 0xb6, 0x79, 0xdf, 0x31, 0x07, 0x9d, 0xc3,
+	0xfe, 0xa0, 0x67, 0xf7, 0x70, 0xd1, 0x5f, 0x8b, 0xbf, 0x38, 0x58, 0xd4, 0xef, 0xbb, 0x76, 0xd3,
+	0xb4, 0x4d, 0x44, 0x28, 0x1d, 0xf7, 0x3a, 0xc3, 0x2a, 0x57, 0xe3, 0x0e, 0x96, 0xa8, 0xfb, 0x1b,
+	0xb7, 0x01, 0xc8, 0x97, 0x7e, 0x77, 0x30, 0xd4, 0xba, 0xef, 0x59, 0xb5, 0xe8, 0x9e, 0x44, 0x76,
+	0xb0, 0x06, 0xcb, 0x8d, 0x01, 0x33, 0x6d, 0xd6, 0x71, 0x05, 0x25, 0x57, 0x10, 0xdd, 0x72, 0x14,
+	0x4d, 0x66, 0xd9, 0x83, 0x9e, 0x97, 0x62, 0xde, 0x53, 0x44, 0xb6, 0x70, 0x17, 0x56, 0xc8, 0xed,
+	0x2d, 0x7b, 0x63, 0x77, 0x3f, 0x31, 0x57, 0x53, 0x76, 0x35, 0xe3, 0x9b, 0xe2, 0x4f, 0x0e, 0x36,
+	0xbd, 0xbc, 0x3e, 0x30, 0x65, 0x1f, 0x3e, 0x32, 0xcb, 0xce, 0xc1, 0x5d, 0x48, 0xe2, 0x8e, 0x52,
+	0x15, 0x73, 0x50, 0x95, 0x92, 0xa8, 0xde, 0xc1, 0x7f, 0x71, 0x28, 0xab, 0xdf, 0xbb, 0xb7, 0x18,
+	0xf2, 0x50, 0x3c, 0x63, 0x3e, 0x94, 0xf3, 0x13, 0xf7, 0x60, 0x5e, 0xb5, 0x4d, 0xdb, 0xc3, 0xa9,
+	0xd4, 0x57, 0x0f, 0x83, 0xcf, 0xe2, 0x6e, 0x53, 0xef, 0x14, 0xab, 0xb0, 0x70, 0xce, 0x2c, 0xcb,
+	0xbc, 0xf3, 0xb1, 0xfc, 0xa5, 0xf8, 0x0c, 0xb6, 0x4e, 0x99, 0xed, 0x57, 0x3a, 0x1e, 0x9e, 0xb1,
+	0xa1, 0x3f, 0x83, 0x89, 0x6a, 0xe2, 0x37, 0x0e, 0xaa, 0x93, 0xea, 0x11, 0x5c, 0x80, 0xc2, 0xe5,
+	0x45, 0x29, 0x8c, 0xa1, 0xe0, 0x3e, 0x94, 0x9c, 0xac, 0x2e, 0xe1, 0x72, 0x1d, 0xc3, 0xf8, 0x60,
+	0x0e, 0xee, 0xb9, 0x78, 0x04, 0xff, 0x8f, 0x86, 0x9a, 0x13, 0xdb, 0x80, 0x07, 0xc9, 0x01, 0x33,
+	0x22, 0x17, 0x4f, 0x60, 0x5b, 0xef, 0x77, 0x22, 0x5f, 0xcc, 0xb9, 0x2f, 0xd3, 0xa1, 0x82, 0x1b,
+	0x56, 0x08, 0x6f, 0x98, 0x78, 0x03, 0x3b, 0xa9, 0x79, 0x66, 0xc5, 0x7a, 0x05, 0xbb, 0xe3, 0x35,
+	0xc2, 0x1b, 0x9c, 0x41, 0x9c, 0x71, 0xff, 0xc5, 0xb7, 0xb0, 0x97, 0x91, 0x79, 0x56, 0x3d, 0x5c,
+	0xc7, 0x2b, 0x45, 0x1e, 0x59, 0x46, 0x13, 0xb1, 0x47, 0x5a, 0x98, 0x78, 0xa4, 0x62, 0x17, 0xf6,
+	0xb3, 0x92, 0xcf, 0xaa, 0x0f, 0x13, 0x1e, 0xc7, 0x26, 0x16, 0x35, 0x82, 0x8c, 0x4e, 0x26, 0xcc,
+	0xa4, 0x90, 0x6c, 0x26, 0x07, 0xd9, 0x25, 0x66, 0xd4, 0xcf, 0xd3, 0x3f, 0xdc, 0x28, 0x03, 0x2e,
+	0xc3, 0x82, 0xae, 0x9c, 0x29, 0xed, 0xd7, 0x0a, 0x3f, 0xe7, 0x2c, 0x54, 0xbd, 0xd1, 0x20, 0xaa,
+	0xca, 0x73, 0xce, 0xe2, 0x44, 0x92, 0x5b, 0x3a, 0x25, 0x7c, 0x01, 0xd7, 0x60, 0x45, 0x25, 0xf4,
+	0x52, 0x6e, 0x10, 0x83, 0x50, 0xda, 0xa6, 0x7c, 0x11, 0x11, 0x2a, 0x17, 0x12, 0x95, 0xce, 0x55,
+	0x43, 0x56, 0x2e, 0xa5, 0x96, 0xdc, 0xe4, 0x4b, 0xb8, 0x0e, 0xab, 0x72, 0xab, 0x45, 0x4e, 0xa5,
+	0x96, 0x41, 0xc9, 0x2b, 0x9d, 0xa8, 0x1a, 0x3f, 0x8f, 0x9b, 0xb0, 0xa6, 0x2b, 0xb2, 0x66, 0x34,
+	0x25, 0x4d, 0x32, 0xc8, 0xd5, 0x85, 0x4c, 0x49, 0x93, 0x2f, 0xe3, 0x16, 0xac, 0x87, 0xdb, 0x4a,
+	0x5b, 0x33, 0xc8, 0x95, 0xac, 0x6a, 0xfc, 0x02, 0x56, 0x61, 0x63, 0xfc, 0x40, 0x6a, 0x68, 0xf2,
+	0x25, 0xe1, 0x17, 0x9d, 0x93, 0xe6, 0xb1, 0xd1, 0xbe, 0x20, 0x54, 0xd2, 0xe4, 0xb6, 0x62, 0x9c,
+	0x48, 0x9a, 0xcb, 0xb7, 0x54, 0xff, 0x5d, 0x86, 0xb2, 0xfa, 0xd9, 0xec, 0xb3, 0x01, 0xea, 0x50,
+	0x19, 0x77, 0x65, 0xdc, 0x09, 0xe7, 0x93, 0xf8, 0x47, 0x44, 0xa8, 0xa5, 0x0b, 0xbc, 0x89, 0x8b,
+	0x73, 0x78, 0x0d, 0x7c, 0xdc, 0x51, 0xf1, 0x51, 0x18, 0x97, 0xe2, 0xcd, 0x82, 0x38, 0x4d, 0x12,
+	0x24, 0xbf, 0x83, 0x8d, 0x24, 0xe3, 0xc3, 0xbd, 0x30, 0x7a, 0x8a, 0x93, 0x0a, 0xfb, 0x59, 0xb2,
+	0xa0, 0x50, 0x1f, 0xb6, 0x52, 0x8c, 0x0b, 0x0f, 0x22, 0x3e, 0x3e, 0xd5, 0x23, 0x85, 0x27, 0x39,
+	0x94, 0x41, 0xc5, 0xaf, 0x1c, 0x3c, 0x9c, 0xea, 0x36, 0x78, 0x98, 0x96, 0x2e, 0xd9, 0xf0, 0x84,
+	0xa3, 0xdc, 0xfa, 0x00, 0xe2, 0x3b, 0x17, 0x37, 0xfe, 0xb8, 0x57, 0x60, 0x6a, 0xd6, 0x14, 0xcb,
+	0x12, 0x9e, 0xe7, 0x0f, 0x08, 0x38, 0x7e, 0x70, 0x50, 0xcb, 0x7a, 0xe5, 0xf8, 0x22, 0xb5, 0xbf,
+	0x34, 0xd3, 0x11, 0xea, 0xff, 0x12, 0xe2, 0xd3, 0xdc, 0x94, 0xdd, 0xff, 0x08, 0x5f, 0xfe, 0x0d,
+	0x00, 0x00, 0xff, 0xff, 0xcd, 0xd3, 0xe1, 0xff, 0x23, 0x0a, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -903,10 +903,10 @@ var _ grpc.ClientConn
 // is compatible with the grpc package it is being compiled against.
 const _ = grpc.SupportPackageIsVersion4
 
-// SwitchClient is the client API for Switch service.
+// SwaperClient is the client API for Swaper service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type SwitchClient interface {
+type SwaperClient interface {
 	CreateUnitData(ctx context.Context, in *CreateUnitDataRequest, opts ...grpc.CallOption) (*CreateUnitDataResponse, error)
 	GetUnitDataByKey(ctx context.Context, in *GetUnitDataByKeyRequest, opts ...grpc.CallOption) (*GetUnitDataByKeyResponse, error)
 	DestroyUnitDataByKey(ctx context.Context, in *DestroyUnitDataByKeyRequest, opts ...grpc.CallOption) (*DestroyUnitDataByKeyResponse, error)
@@ -916,79 +916,79 @@ type SwitchClient interface {
 	UpdateUnitDataEffectiveTimeByKey(ctx context.Context, in *UpdateUnitDataEffectiveTimeByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataEffectiveTimeByKeyResponse, error)
 }
 
-type switchClient struct {
+type swaperClient struct {
 	cc *grpc.ClientConn
 }
 
-func NewSwitchClient(cc *grpc.ClientConn) SwitchClient {
-	return &switchClient{cc}
+func NewSwaperClient(cc *grpc.ClientConn) SwaperClient {
+	return &swaperClient{cc}
 }
 
-func (c *switchClient) CreateUnitData(ctx context.Context, in *CreateUnitDataRequest, opts ...grpc.CallOption) (*CreateUnitDataResponse, error) {
+func (c *swaperClient) CreateUnitData(ctx context.Context, in *CreateUnitDataRequest, opts ...grpc.CallOption) (*CreateUnitDataResponse, error) {
 	out := new(CreateUnitDataResponse)
-	err := c.cc.Invoke(ctx, "/standard.Switch/CreateUnitData", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/standard.Swaper/CreateUnitData", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *switchClient) GetUnitDataByKey(ctx context.Context, in *GetUnitDataByKeyRequest, opts ...grpc.CallOption) (*GetUnitDataByKeyResponse, error) {
+func (c *swaperClient) GetUnitDataByKey(ctx context.Context, in *GetUnitDataByKeyRequest, opts ...grpc.CallOption) (*GetUnitDataByKeyResponse, error) {
 	out := new(GetUnitDataByKeyResponse)
-	err := c.cc.Invoke(ctx, "/standard.Switch/GetUnitDataByKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/standard.Swaper/GetUnitDataByKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *switchClient) DestroyUnitDataByKey(ctx context.Context, in *DestroyUnitDataByKeyRequest, opts ...grpc.CallOption) (*DestroyUnitDataByKeyResponse, error) {
+func (c *swaperClient) DestroyUnitDataByKey(ctx context.Context, in *DestroyUnitDataByKeyRequest, opts ...grpc.CallOption) (*DestroyUnitDataByKeyResponse, error) {
 	out := new(DestroyUnitDataByKeyResponse)
-	err := c.cc.Invoke(ctx, "/standard.Switch/DestroyUnitDataByKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/standard.Swaper/DestroyUnitDataByKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *switchClient) UpdateUnitDataBodyByKey(ctx context.Context, in *UpdateUnitDataBodyByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataBodyByKeyResponse, error) {
+func (c *swaperClient) UpdateUnitDataBodyByKey(ctx context.Context, in *UpdateUnitDataBodyByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataBodyByKeyResponse, error) {
 	out := new(UpdateUnitDataBodyByKeyResponse)
-	err := c.cc.Invoke(ctx, "/standard.Switch/UpdateUnitDataBodyByKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/standard.Swaper/UpdateUnitDataBodyByKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *switchClient) UpdateUnitDataExpiryTimeByKey(ctx context.Context, in *UpdateUnitDataExpiryTimeByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataExpiryTimeByKeyResponse, error) {
+func (c *swaperClient) UpdateUnitDataExpiryTimeByKey(ctx context.Context, in *UpdateUnitDataExpiryTimeByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataExpiryTimeByKeyResponse, error) {
 	out := new(UpdateUnitDataExpiryTimeByKeyResponse)
-	err := c.cc.Invoke(ctx, "/standard.Switch/UpdateUnitDataExpiryTimeByKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/standard.Swaper/UpdateUnitDataExpiryTimeByKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *switchClient) UpdateUnitDataDestroyTimeByKey(ctx context.Context, in *UpdateUnitDataDestroyTimeByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataDestroyTimeByKeyResponse, error) {
+func (c *swaperClient) UpdateUnitDataDestroyTimeByKey(ctx context.Context, in *UpdateUnitDataDestroyTimeByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataDestroyTimeByKeyResponse, error) {
 	out := new(UpdateUnitDataDestroyTimeByKeyResponse)
-	err := c.cc.Invoke(ctx, "/standard.Switch/UpdateUnitDataDestroyTimeByKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/standard.Swaper/UpdateUnitDataDestroyTimeByKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *switchClient) UpdateUnitDataEffectiveTimeByKey(ctx context.Context, in *UpdateUnitDataEffectiveTimeByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataEffectiveTimeByKeyResponse, error) {
+func (c *swaperClient) UpdateUnitDataEffectiveTimeByKey(ctx context.Context, in *UpdateUnitDataEffectiveTimeByKeyRequest, opts ...grpc.CallOption) (*UpdateUnitDataEffectiveTimeByKeyResponse, error) {
 	out := new(UpdateUnitDataEffectiveTimeByKeyResponse)
-	err := c.cc.Invoke(ctx, "/standard.Switch/UpdateUnitDataEffectiveTimeByKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/standard.Swaper/UpdateUnitDataEffectiveTimeByKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// SwitchServer is the server API for Switch service.
-type SwitchServer interface {
+// SwaperServer is the server API for Swaper service.
+type SwaperServer interface {
 	CreateUnitData(context.Context, *CreateUnitDataRequest) (*CreateUnitDataResponse, error)
 	GetUnitDataByKey(context.Context, *GetUnitDataByKeyRequest) (*GetUnitDataByKeyResponse, error)
 	DestroyUnitDataByKey(context.Context, *DestroyUnitDataByKeyRequest) (*DestroyUnitDataByKeyResponse, error)
@@ -998,193 +998,193 @@ type SwitchServer interface {
 	UpdateUnitDataEffectiveTimeByKey(context.Context, *UpdateUnitDataEffectiveTimeByKeyRequest) (*UpdateUnitDataEffectiveTimeByKeyResponse, error)
 }
 
-// UnimplementedSwitchServer can be embedded to have forward compatible implementations.
-type UnimplementedSwitchServer struct {
+// UnimplementedSwaperServer can be embedded to have forward compatible implementations.
+type UnimplementedSwaperServer struct {
 }
 
-func (*UnimplementedSwitchServer) CreateUnitData(ctx context.Context, req *CreateUnitDataRequest) (*CreateUnitDataResponse, error) {
+func (*UnimplementedSwaperServer) CreateUnitData(ctx context.Context, req *CreateUnitDataRequest) (*CreateUnitDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateUnitData not implemented")
 }
-func (*UnimplementedSwitchServer) GetUnitDataByKey(ctx context.Context, req *GetUnitDataByKeyRequest) (*GetUnitDataByKeyResponse, error) {
+func (*UnimplementedSwaperServer) GetUnitDataByKey(ctx context.Context, req *GetUnitDataByKeyRequest) (*GetUnitDataByKeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUnitDataByKey not implemented")
 }
-func (*UnimplementedSwitchServer) DestroyUnitDataByKey(ctx context.Context, req *DestroyUnitDataByKeyRequest) (*DestroyUnitDataByKeyResponse, error) {
+func (*UnimplementedSwaperServer) DestroyUnitDataByKey(ctx context.Context, req *DestroyUnitDataByKeyRequest) (*DestroyUnitDataByKeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DestroyUnitDataByKey not implemented")
 }
-func (*UnimplementedSwitchServer) UpdateUnitDataBodyByKey(ctx context.Context, req *UpdateUnitDataBodyByKeyRequest) (*UpdateUnitDataBodyByKeyResponse, error) {
+func (*UnimplementedSwaperServer) UpdateUnitDataBodyByKey(ctx context.Context, req *UpdateUnitDataBodyByKeyRequest) (*UpdateUnitDataBodyByKeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUnitDataBodyByKey not implemented")
 }
-func (*UnimplementedSwitchServer) UpdateUnitDataExpiryTimeByKey(ctx context.Context, req *UpdateUnitDataExpiryTimeByKeyRequest) (*UpdateUnitDataExpiryTimeByKeyResponse, error) {
+func (*UnimplementedSwaperServer) UpdateUnitDataExpiryTimeByKey(ctx context.Context, req *UpdateUnitDataExpiryTimeByKeyRequest) (*UpdateUnitDataExpiryTimeByKeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUnitDataExpiryTimeByKey not implemented")
 }
-func (*UnimplementedSwitchServer) UpdateUnitDataDestroyTimeByKey(ctx context.Context, req *UpdateUnitDataDestroyTimeByKeyRequest) (*UpdateUnitDataDestroyTimeByKeyResponse, error) {
+func (*UnimplementedSwaperServer) UpdateUnitDataDestroyTimeByKey(ctx context.Context, req *UpdateUnitDataDestroyTimeByKeyRequest) (*UpdateUnitDataDestroyTimeByKeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUnitDataDestroyTimeByKey not implemented")
 }
-func (*UnimplementedSwitchServer) UpdateUnitDataEffectiveTimeByKey(ctx context.Context, req *UpdateUnitDataEffectiveTimeByKeyRequest) (*UpdateUnitDataEffectiveTimeByKeyResponse, error) {
+func (*UnimplementedSwaperServer) UpdateUnitDataEffectiveTimeByKey(ctx context.Context, req *UpdateUnitDataEffectiveTimeByKeyRequest) (*UpdateUnitDataEffectiveTimeByKeyResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateUnitDataEffectiveTimeByKey not implemented")
 }
 
-func RegisterSwitchServer(s *grpc.Server, srv SwitchServer) {
-	s.RegisterService(&_Switch_serviceDesc, srv)
+func RegisterSwaperServer(s *grpc.Server, srv SwaperServer) {
+	s.RegisterService(&_Swaper_serviceDesc, srv)
 }
 
-func _Switch_CreateUnitData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Swaper_CreateUnitData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(CreateUnitDataRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SwitchServer).CreateUnitData(ctx, in)
+		return srv.(SwaperServer).CreateUnitData(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/standard.Switch/CreateUnitData",
+		FullMethod: "/standard.Swaper/CreateUnitData",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwitchServer).CreateUnitData(ctx, req.(*CreateUnitDataRequest))
+		return srv.(SwaperServer).CreateUnitData(ctx, req.(*CreateUnitDataRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Switch_GetUnitDataByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Swaper_GetUnitDataByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetUnitDataByKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SwitchServer).GetUnitDataByKey(ctx, in)
+		return srv.(SwaperServer).GetUnitDataByKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/standard.Switch/GetUnitDataByKey",
+		FullMethod: "/standard.Swaper/GetUnitDataByKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwitchServer).GetUnitDataByKey(ctx, req.(*GetUnitDataByKeyRequest))
+		return srv.(SwaperServer).GetUnitDataByKey(ctx, req.(*GetUnitDataByKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Switch_DestroyUnitDataByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Swaper_DestroyUnitDataByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DestroyUnitDataByKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SwitchServer).DestroyUnitDataByKey(ctx, in)
+		return srv.(SwaperServer).DestroyUnitDataByKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/standard.Switch/DestroyUnitDataByKey",
+		FullMethod: "/standard.Swaper/DestroyUnitDataByKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwitchServer).DestroyUnitDataByKey(ctx, req.(*DestroyUnitDataByKeyRequest))
+		return srv.(SwaperServer).DestroyUnitDataByKey(ctx, req.(*DestroyUnitDataByKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Switch_UpdateUnitDataBodyByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Swaper_UpdateUnitDataBodyByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateUnitDataBodyByKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SwitchServer).UpdateUnitDataBodyByKey(ctx, in)
+		return srv.(SwaperServer).UpdateUnitDataBodyByKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/standard.Switch/UpdateUnitDataBodyByKey",
+		FullMethod: "/standard.Swaper/UpdateUnitDataBodyByKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwitchServer).UpdateUnitDataBodyByKey(ctx, req.(*UpdateUnitDataBodyByKeyRequest))
+		return srv.(SwaperServer).UpdateUnitDataBodyByKey(ctx, req.(*UpdateUnitDataBodyByKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Switch_UpdateUnitDataExpiryTimeByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Swaper_UpdateUnitDataExpiryTimeByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateUnitDataExpiryTimeByKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SwitchServer).UpdateUnitDataExpiryTimeByKey(ctx, in)
+		return srv.(SwaperServer).UpdateUnitDataExpiryTimeByKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/standard.Switch/UpdateUnitDataExpiryTimeByKey",
+		FullMethod: "/standard.Swaper/UpdateUnitDataExpiryTimeByKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwitchServer).UpdateUnitDataExpiryTimeByKey(ctx, req.(*UpdateUnitDataExpiryTimeByKeyRequest))
+		return srv.(SwaperServer).UpdateUnitDataExpiryTimeByKey(ctx, req.(*UpdateUnitDataExpiryTimeByKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Switch_UpdateUnitDataDestroyTimeByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Swaper_UpdateUnitDataDestroyTimeByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateUnitDataDestroyTimeByKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SwitchServer).UpdateUnitDataDestroyTimeByKey(ctx, in)
+		return srv.(SwaperServer).UpdateUnitDataDestroyTimeByKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/standard.Switch/UpdateUnitDataDestroyTimeByKey",
+		FullMethod: "/standard.Swaper/UpdateUnitDataDestroyTimeByKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwitchServer).UpdateUnitDataDestroyTimeByKey(ctx, req.(*UpdateUnitDataDestroyTimeByKeyRequest))
+		return srv.(SwaperServer).UpdateUnitDataDestroyTimeByKey(ctx, req.(*UpdateUnitDataDestroyTimeByKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Switch_UpdateUnitDataEffectiveTimeByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Swaper_UpdateUnitDataEffectiveTimeByKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(UpdateUnitDataEffectiveTimeByKeyRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(SwitchServer).UpdateUnitDataEffectiveTimeByKey(ctx, in)
+		return srv.(SwaperServer).UpdateUnitDataEffectiveTimeByKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/standard.Switch/UpdateUnitDataEffectiveTimeByKey",
+		FullMethod: "/standard.Swaper/UpdateUnitDataEffectiveTimeByKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(SwitchServer).UpdateUnitDataEffectiveTimeByKey(ctx, req.(*UpdateUnitDataEffectiveTimeByKeyRequest))
+		return srv.(SwaperServer).UpdateUnitDataEffectiveTimeByKey(ctx, req.(*UpdateUnitDataEffectiveTimeByKeyRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-var _Switch_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "standard.Switch",
-	HandlerType: (*SwitchServer)(nil),
+var _Swaper_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "standard.Swaper",
+	HandlerType: (*SwaperServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "CreateUnitData",
-			Handler:    _Switch_CreateUnitData_Handler,
+			Handler:    _Swaper_CreateUnitData_Handler,
 		},
 		{
 			MethodName: "GetUnitDataByKey",
-			Handler:    _Switch_GetUnitDataByKey_Handler,
+			Handler:    _Swaper_GetUnitDataByKey_Handler,
 		},
 		{
 			MethodName: "DestroyUnitDataByKey",
-			Handler:    _Switch_DestroyUnitDataByKey_Handler,
+			Handler:    _Swaper_DestroyUnitDataByKey_Handler,
 		},
 		{
 			MethodName: "UpdateUnitDataBodyByKey",
-			Handler:    _Switch_UpdateUnitDataBodyByKey_Handler,
+			Handler:    _Swaper_UpdateUnitDataBodyByKey_Handler,
 		},
 		{
 			MethodName: "UpdateUnitDataExpiryTimeByKey",
-			Handler:    _Switch_UpdateUnitDataExpiryTimeByKey_Handler,
+			Handler:    _Swaper_UpdateUnitDataExpiryTimeByKey_Handler,
 		},
 		{
 			MethodName: "UpdateUnitDataDestroyTimeByKey",
-			Handler:    _Switch_UpdateUnitDataDestroyTimeByKey_Handler,
+			Handler:    _Swaper_UpdateUnitDataDestroyTimeByKey_Handler,
 		},
 		{
 			MethodName: "UpdateUnitDataEffectiveTimeByKey",
-			Handler:    _Switch_UpdateUnitDataEffectiveTimeByKey_Handler,
+			Handler:    _Swaper_UpdateUnitDataEffectiveTimeByKey_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

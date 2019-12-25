@@ -23,7 +23,7 @@
     - [State](#standard.State)
   
   
-    - [Switch](#standard.Switch)
+    - [Swaper](#standard.Swaper)
   
 
 - [Scalar Value Types](#scalar-value-types)
@@ -308,9 +308,9 @@
  
 
 
-<a name="standard.Switch"></a>
+<a name="standard.Swaper"></a>
 
-### Switch
+### Swaper
 在里面流通的是 `UnitData`
 每个 `UnitData` 有自己的一些生命周期设定
 可以创建一个 `UnitData` 并获得这个 `UnitData` 的对应加密 number
