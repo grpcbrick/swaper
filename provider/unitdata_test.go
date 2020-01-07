@@ -56,11 +56,11 @@ func TestService_CreateUnitData(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			gotResp, err := srv.CreateUnitData(context.Background(), tt.args)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("Service.CreateUser() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("Service.CreateUser() 创建失败，错误：%v, 期望得到：%v", err, tt.wantErr)
 				return
 			}
 			if gotResp.State.String() != tt.wantState.String() {
-				t.Errorf("Service.CreateUser() = %v, want %v", gotResp, tt.wantState)
+				t.Errorf("Service.CreateUser() 返回状态不符合预期，得到：%v, 期望得到：%v", gotResp, tt.wantState)
 				return
 			}
 
