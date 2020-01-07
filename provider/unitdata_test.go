@@ -1,11 +1,13 @@
 package provider
 
 import (
+	"context"
 	"fmt"
 	"os"
 	"testing"
 
 	"github.com/grpcbrick/switch/dao"
+	"github.com/grpcbrick/switch/standard"
 	"github.com/yinxulai/goutils/config"
 	"github.com/yinxulai/goutils/sqldb"
 )
@@ -23,71 +25,56 @@ func TestMain(m *testing.M) {
 	os.Exit(exitCode)            // 推出
 }
 
-// func InitTestData() {
-// 	// 预创建一条测试用户数据
-// 	// 方便 label、group 测试
-// 	srv := NewService()
-// 	resp, err := srv.CreateUser(
-// 		context.Background(),
-// 		&standard.CreateUserRequest{Class: "InitTestData", Inviter: 0, Nickname: "InitTestData", Username: "InitTestData", Password: "InitTestData"},
-// 	)
-// 	if err != nil {
-// 		panic(err)
-// 	}
-// 	if resp.State != standard.State_SUCCESS {
-// 		panic(fmt.Errorf("准备测试数据失败、用户创建失败: %v", resp))
-// 	}
+func TestService_CreateUnitData(t *testing.T) {
+	srv := NewService()
+	tests := []struct {
+		name      string
+		args      *standard.CreateUnitDataRequest
+		wantState standard.State
+		wantErr   bool
+	}{
+		{"正常创建", &standard.CreateUnitDataRequest{Body: "Body", ExpiryTime: 10, DestroyTime: 10, EffectiveTime: 10},
+			standard.State_SUCCESS, false},
 
-// 	fmt.Printf("预插入一条用户数据 ID 为: %d \n", resp.Data.ID)
-// }
+		{"重复的 Body", &standard.CreateUnitDataRequest{Body: "Body", ExpiryTime: 10, DestroyTime: 10, EffectiveTime: 10},
+			standard.State_SUCCESS, false},
 
-// func TestService_CreateUser(t *testing.T) {
-// 	srv := NewService()
-// 	tests := []struct {
-// 		name      string
-// 		args      *standard.CreateUserRequest
-// 		wantState standard.State
-// 		wantErr   bool
-// 	}{
-// 		{"正常创建", &standard.CreateUserRequest{Class: "TEST", Inviter: 1, Nickname: "Nickname", Username: "Username", Password: "Password"},
-// 			standard.State_SUCCESS, false},
+		{"空的 ExpiryTime", &standard.CreateUnitDataRequest{Body: "Body", DestroyTime: 10, EffectiveTime: 10},
+			standard.State_SUCCESS, false},
 
-// 		{"重复的 Username", &standard.CreateUserRequest{Class: "TEST", Inviter: 1, Nickname: "Nickname", Username: "Username", Password: "Password"},
-// 			standard.State_USER_ALREADY_EXISTS, false},
+		{"空的 DestroyTime", &standard.CreateUnitDataRequest{Body: "Body", ExpiryTime: 10, EffectiveTime: 10},
+			standard.State_SUCCESS, false},
 
-// 		{"空的 Class", &standard.CreateUserRequest{Class: "TEST", Inviter: 1, Nickname: "Nickname", Username: "Username1", Password: "Password"},
-// 			standard.State_SUCCESS, false},
+		{"空的 EffectiveTime", &standard.CreateUnitDataRequest{Body: "Body", ExpiryTime: 10, DestroyTime: 10},
+			standard.State_SUCCESS, false},
 
-// 		{"空的 Inviter", &standard.CreateUserRequest{Class: "TEST", Nickname: "Nickname", Username: "Username2", Password: "Password"},
-// 			standard.State_SUCCESS, false},
+		{"空的 ExpiryTime、DestroyTime、EffectiveTime", &standard.CreateUnitDataRequest{Body: "Body"},
+			standard.State_SUCCESS, false},
+	}
 
-// 		{"空的 Nickname", &standard.CreateUserRequest{Class: "TEST", Inviter: 1, Username: "Username3", Password: "Password"},
-// 			standard.State_PARAMS_INVALID, false},
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			gotResp, err := srv.CreateUnitData(context.Background(), tt.args)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("Service.CreateUser() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if gotResp.State.String() != tt.wantState.String() {
+				t.Errorf("Service.CreateUser() = %v, want %v", gotResp, tt.wantState)
+				return
+			}
 
-// 		{"空的 Username", &standard.CreateUserRequest{Class: "TEST", Inviter: 1, Nickname: "Nickname", Password: "Username4"},
-// 			standard.State_PARAMS_INVALID, false},
-
-// 		{"空的 Password", &standard.CreateUserRequest{Class: "TEST", Inviter: 1, Nickname: "Nickname", Username: "Username5"},
-// 			standard.State_PARAMS_INVALID, false},
-// 	}
-
-// 	for _, tt := range tests {
-// 		t.Run(tt.name, func(t *testing.T) {
-// 			gotResp, err := srv.CreateUser(context.Background(), tt.args)
-// 			if (err != nil) != tt.wantErr {
-// 				t.Errorf("Service.CreateUser() error = %v, wantErr %v", err, tt.wantErr)
-// 				return
-// 			}
-// 			if gotResp.State.String() != tt.wantState.String() {
-// 				t.Errorf("Service.CreateUser() = %v, want %v", gotResp, tt.wantState)
-// 				return
-// 			}
-// 			if gotResp.State == standard.State_SUCCESS {
-// 				if gotResp.Data.Username != tt.args.Username {
-// 					t.Errorf("Service.CreateUser() = %v, want %v", gotResp, tt.wantState)
-// 					return
-// 				}
-// 			}
-// 		})
-// 	}
-// }
+			// 如果目标是成功、就去测一下查询接口
+			if gotResp.State == standard.State_SUCCESS {
+				getResp, err := srv.GetUnitDataByKey(context.Background(), &standard.GetUnitDataByKeyRequest{Key: gotResp.GetKey()})
+				if err != nil {
+					t.Errorf("Service.GetUnitDataByKey() 根据 Key 查询 UnitData 失败： %v", err)
+					return
+				}
+				if getResp.GetData().GetBody() != tt.args.Body {
+					t.Errorf("Service.CreateUser() 失败, 希望创建的 Body： %v, 创建后查询到： %v", tt.args.Body, getResp.GetData().GetBody())
+				}
+			}
+		})
+	}
+}

@@ -190,12 +190,8 @@ func QueryUnitDataByKey(key string) (*models.UnitData, error) {
 }
 
 // CreateUnitData 创建数据
-func CreateUnitData(body string, expirytime, destroytime, effectivetime time.Time) (string, error) {
+func CreateUnitData(body string, expirytime, destroytime, effectivetime time.Time) (int64, error) {
 	var err error
-	key, err := generateUniqueKey()
-	if err != nil {
-		return "", err
-	}
 
 	stmp := sqldb.CreateNamedStmt(strings.Join([]string{
 		"INSERT INTO",
@@ -206,18 +202,22 @@ func CreateUnitData(body string, expirytime, destroytime, effectivetime time.Tim
 	}, " "))
 
 	namedData := map[string]interface{}{
-		"Key":           key,
 		"Body":          body,
 		"ExpiryTime":    expirytime,
 		"DestroyTime":   destroytime,
 		"EffectiveTime": effectivetime,
 	}
 
-	_, err = stmp.Exec(namedData)
+	result, err := stmp.Exec(namedData)
 	if err != nil {
-		return "", err
+		return 0, err
 	}
-	return key, nil
+	id, err := result.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
+
+	return id, nil
 }
 
 // UpdataUnitDataFieldByKey 根据 Key 更新指定字段

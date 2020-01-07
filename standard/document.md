@@ -46,9 +46,9 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Body | [string](#string) |  | 数据 |
-| ExpiryTime | [string](#string) |  | 失效时间 |
-| DestroyTime | [string](#string) |  | 销毁时间 |
-| EffectiveTime | [string](#string) |  | 生效时间 |
+| ExpiryTime | [int64](#int64) |  | 失效时间 服务器当前时间 &#43; ExpiryTime ms |
+| DestroyTime | [int64](#int64) |  | 销毁时间 服务器当前时间 &#43; DestroyTime ms |
+| EffectiveTime | [int64](#int64) |  | 生效时间 服务器当前时间 &#43; EffectiveTime ms |
 
 
 
@@ -144,10 +144,10 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Body | [string](#string) |  | 数据 |
-| ExpiryTime | [string](#string) |  | 失效时间 |
-| CreatedTime | [string](#string) |  | 创建时间 |
-| DestroyTime | [string](#string) |  | 销毁时间 |
-| EffectiveTime | [string](#string) |  | 生效时间 |
+| ExpiryTime | [int64](#int64) |  | 失效时间 |
+| CreatedTime | [int64](#int64) |  | 创建时间 剩余多少 ms |
+| DestroyTime | [int64](#int64) |  | 销毁时间 剩余多少 ms |
+| EffectiveTime | [int64](#int64) |  | 生效时间 剩余多少 ms |
 
 
 
@@ -195,7 +195,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Key | [string](#string) |  |  |
-| DestroyTime | [string](#string) |  |  |
+| DestroyTime | [int64](#int64) |  |  |
 
 
 
@@ -227,7 +227,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Key | [string](#string) |  |  |
-| EffectiveTime | [string](#string) |  |  |
+| EffectiveTime | [int64](#int64) |  |  |
 
 
 
@@ -259,7 +259,7 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | Key | [string](#string) |  |  |
-| ExpiryTime | [string](#string) |  |  |
+| ExpiryTime | [int64](#int64) |  |  |
 
 
 
