@@ -73,6 +73,32 @@ func truncateDataTable() error {
 	return nil
 }
 
+// 生成一个为一个 key
+func generateUniqueKey() (string, error) {
+	randomString := func(l int) string {
+		str := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+		bytes := []byte(str)
+		result := []byte{}
+		r := rand.New(rand.NewSource(time.Now().UnixNano()))
+		for i := 0; i < l; i++ {
+			result = append(result, bytes[r.Intn(len(bytes))])
+		}
+		return string(result)
+	}
+
+	for {
+		newKey := randomString(128)
+		count, err := CountUnitDataByKey(newKey)
+		if err != nil {
+			return "", err
+		}
+
+		if count <= 0 {
+			return newKey, nil
+		}
+	}
+}
+
 // CreateUnitDataHistory 对指定数据创建一条历史快照
 func CreateUnitDataHistory(key string) error {
 	var err error
@@ -190,7 +216,7 @@ func QueryUnitDataByKey(key string) (*models.UnitData, error) {
 }
 
 // CreateUnitData 创建数据
-func CreateUnitData(body string, expirytime, destroytime, effectivetime time.Time) (string, error) {
+func CreateUnitData(body string, expirytime, destroytime, effectivetime time.Time) (int64, error) {
 	var err error
 	key, err := generateUniqueKey()
 	if err != nil {
@@ -213,11 +239,16 @@ func CreateUnitData(body string, expirytime, destroytime, effectivetime time.Tim
 		"EffectiveTime": effectivetime,
 	}
 
-	_, err = stmp.Exec(namedData)
+	result, err := stmp.Exec(namedData)
 	if err != nil {
-		return "", err
+		return 0, err
 	}
-	return key, nil
+	id, err := result.LastInsertId()
+	if err != nil {
+		return 0, err
+	}
+
+	return id, nil
 }
 
 // UpdataUnitDataFieldByKey 根据 Key 更新指定字段
@@ -268,30 +299,4 @@ func UpdateUintDataDestroyTimeByKey(key string, destroyTime time.Time) error {
 // UpdateUintDataEffectiveTimeByKey 更新生效时间
 func UpdateUintDataEffectiveTimeByKey(key string, dataEffective time.Time) error {
 	return UpdataUnitDataFieldByKey(key, map[string]interface{}{"EffectiveTime": dataEffective})
-}
-
-// 生成一个为一个 key
-func generateUniqueKey() (string, error) {
-	randomString := func(l int) string {
-		str := "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-		bytes := []byte(str)
-		result := []byte{}
-		r := rand.New(rand.NewSource(time.Now().UnixNano()))
-		for i := 0; i < l; i++ {
-			result = append(result, bytes[r.Intn(len(bytes))])
-		}
-		return string(result)
-	}
-
-	for {
-		newKey := randomString(128)
-		count, err := CountUnitDataByKey(newKey)
-		if err != nil {
-			return "", err
-		}
-
-		if count <= 0 {
-			return newKey, nil
-		}
-	}
 }

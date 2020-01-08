@@ -7,17 +7,17 @@ export class UnitData extends jspb.Message {
   getBody(): string;
   setBody(value: string): void;
 
-  getExpirytime(): string;
-  setExpirytime(value: string): void;
+  getExpirytime(): number;
+  setExpirytime(value: number): void;
 
-  getCreatedtime(): string;
-  setCreatedtime(value: string): void;
+  getCreatedtime(): number;
+  setCreatedtime(value: number): void;
 
-  getDestroytime(): string;
-  setDestroytime(value: string): void;
+  getDestroytime(): number;
+  setDestroytime(value: number): void;
 
-  getEffectivetime(): string;
-  setEffectivetime(value: string): void;
+  getEffectivetime(): number;
+  setEffectivetime(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UnitData.AsObject;
@@ -32,10 +32,10 @@ export class UnitData extends jspb.Message {
 export namespace UnitData {
   export type AsObject = {
     body: string,
-    expirytime: string,
-    createdtime: string,
-    destroytime: string,
-    effectivetime: string,
+    expirytime: number,
+    createdtime: number,
+    destroytime: number,
+    effectivetime: number,
   }
 }
 
@@ -43,14 +43,14 @@ export class CreateUnitDataRequest extends jspb.Message {
   getBody(): string;
   setBody(value: string): void;
 
-  getExpirytime(): string;
-  setExpirytime(value: string): void;
+  getExpirytime(): number;
+  setExpirytime(value: number): void;
 
-  getDestroytime(): string;
-  setDestroytime(value: string): void;
+  getDestroytime(): number;
+  setDestroytime(value: number): void;
 
-  getEffectivetime(): string;
-  setEffectivetime(value: string): void;
+  getEffectivetime(): number;
+  setEffectivetime(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): CreateUnitDataRequest.AsObject;
@@ -65,9 +65,9 @@ export class CreateUnitDataRequest extends jspb.Message {
 export namespace CreateUnitDataRequest {
   export type AsObject = {
     body: string,
-    expirytime: string,
-    destroytime: string,
-    effectivetime: string,
+    expirytime: number,
+    destroytime: number,
+    effectivetime: number,
   }
 }
 
@@ -245,8 +245,8 @@ export class UpdateUnitDataExpiryTimeByKeyRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
 
-  getExpirytime(): string;
-  setExpirytime(value: string): void;
+  getExpirytime(): number;
+  setExpirytime(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateUnitDataExpiryTimeByKeyRequest.AsObject;
@@ -261,7 +261,7 @@ export class UpdateUnitDataExpiryTimeByKeyRequest extends jspb.Message {
 export namespace UpdateUnitDataExpiryTimeByKeyRequest {
   export type AsObject = {
     key: string,
-    expirytime: string,
+    expirytime: number,
   }
 }
 
@@ -293,8 +293,8 @@ export class UpdateUnitDataDestroyTimeByKeyRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
 
-  getDestroytime(): string;
-  setDestroytime(value: string): void;
+  getDestroytime(): number;
+  setDestroytime(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateUnitDataDestroyTimeByKeyRequest.AsObject;
@@ -309,7 +309,7 @@ export class UpdateUnitDataDestroyTimeByKeyRequest extends jspb.Message {
 export namespace UpdateUnitDataDestroyTimeByKeyRequest {
   export type AsObject = {
     key: string,
-    destroytime: string,
+    destroytime: number,
   }
 }
 
@@ -341,8 +341,8 @@ export class UpdateUnitDataEffectiveTimeByKeyRequest extends jspb.Message {
   getKey(): string;
   setKey(value: string): void;
 
-  getEffectivetime(): string;
-  setEffectivetime(value: string): void;
+  getEffectivetime(): number;
+  setEffectivetime(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UpdateUnitDataEffectiveTimeByKeyRequest.AsObject;
@@ -357,7 +357,7 @@ export class UpdateUnitDataEffectiveTimeByKeyRequest extends jspb.Message {
 export namespace UpdateUnitDataEffectiveTimeByKeyRequest {
   export type AsObject = {
     key: string,
-    effectivetime: string,
+    effectivetime: number,
   }
 }
 
