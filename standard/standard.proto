@@ -25,17 +25,19 @@ enum State {
 // 单位数据
 message UnitData {
   string Body = 1 ; // 数据
-  int64 ExpiryTime = 3 ; // 失效时间
-  int64 CreatedTime = 4 ; // 创建时间 剩余多少 ms
-  int64 DestroyTime = 5 ; // 销毁时间  剩余多少 ms
-  int64 EffectiveTime = 6 ; // 生效时间  剩余多少 ms
+  string ExpiryTime = 2 ; // 失效时间
+  string CreatedTime = 3 ; // 创建时间
+  string DestroyTime = 4 ; // 销毁时间
+  string UpdatedTime = 5 ;
+  string DeletedTime = 6 ;
+  string EffectiveTime = 7 ; // 生效时间
 }
 
 message CreateUnitDataRequest {
   string Body = 1 ; // 数据
-  int64 ExpiryTime = 2 ; // 失效时间 服务器当前时间 + ExpiryTime ms
-  int64 DestroyTime = 3 ; // 销毁时间 服务器当前时间 + DestroyTime ms
-  int64 EffectiveTime = 4 ; // 生效时间 服务器当前时间 + EffectiveTime ms
+  int64 ExpiryTime = 2 ; // 失效时间 服务器当前时间 + ExpiryTime s
+  int64 DestroyTime = 3 ; // 销毁时间 服务器当前时间 + DestroyTime s
+  int64 EffectiveTime = 4 ; // 生效时间 服务器当前时间 + EffectiveTime s
 }
 
 message CreateUnitDataResponse {

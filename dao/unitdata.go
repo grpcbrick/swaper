@@ -34,27 +34,6 @@ func createDataTable() error {
 	if err != nil {
 		return err
 	}
-	// 历史表
-	historyStmp := sqldb.CreateStmt(strings.Join([]string{
-		"CREATE TABLE IF NOT EXISTS `" + unitDataHistoryTableName + "`",
-		"(",
-		"`Index` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Index',",
-		"`Key` VARCHAR(128)  COMMENT 'Key',",
-		"`Body` BLOB COMMENT '数据',",
-		"`ExpiryTime` DATETIME NOT NULL COMMENT '失效时间', ",
-		"`DestroyTime` DATETIME NOT NULL COMMENT '销毁时间',",
-		"`EffectiveTime` DATETIME NOT NULL COMMENT '生效时间',",
-		"`CreatedTime` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',",
-		"`UpdatedTime` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',",
-		"PRIMARY KEY (`Index`)",
-		")",
-		"ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4;",
-	}, " "))
-	_, err = historyStmp.Exec()
-	if err != nil {
-		return err
-	}
-
 	return nil
 }
 
@@ -62,11 +41,6 @@ func truncateDataTable() error {
 	var err error
 	masterStmp := sqldb.CreateStmt("truncate table `" + unitDataTableName + "`")
 	_, err = masterStmp.Exec()
-	if err != nil {
-		return err
-	}
-	historyStmp := sqldb.CreateStmt("truncate table `" + unitDataHistoryTableName + "`")
-	_, err = historyStmp.Exec()
 	if err != nil {
 		return err
 	}
@@ -99,32 +73,6 @@ func generateUniqueKey() (string, error) {
 	}
 }
 
-// CreateUnitDataHistory 对指定数据创建一条历史快照
-func CreateUnitDataHistory(key string) error {
-	var err error
-	namedData := map[string]interface{}{
-		"Key": key,
-	}
-
-	// 插入一条更新历史
-	historyStmp := sqldb.CreateNamedStmt(strings.Join([]string{
-		"INSERT INTO",
-		"`" + unitDataHistoryTableName + "`",
-		"(Key,Data,ExpiryTime,DestroyTime,EffectiveTime,CreatedTime,UpdatedTime)",
-		"SELECT",
-		"Key,Data,ExpiryTime,DestroyTime,EffectiveTime,CreatedTime,UpdatedTime",
-		"FROM",
-		"`" + unitDataTableName + "`",
-		"WHERE",
-		"`Key`=:Key",
-	}, " "))
-	_, err = historyStmp.Exec(namedData)
-	if err != nil {
-		return err
-	}
-	return nil
-}
-
 // CountUnitDataByKey 根据 key 统计
 func CountUnitDataByKey(key string) (int64, error) {
 	stmp := sqldb.CreateNamedStmt(strings.Join([]string{
@@ -148,6 +96,11 @@ func CountUnitDataByKey(key string) (int64, error) {
 
 // QueryUnitDatas 查询用户
 func QueryUnitDatas(page, limit int64) (totalPage, currentPage int64, datas []*models.UnitData, err error) {
+	err = ClearDestructibleUintData()
+	if err != nil {
+		return totalPage, currentPage, datas, err
+	}
+
 	currentPage = page // 固定当前页
 
 	// 查询数据长度
@@ -206,6 +159,11 @@ func QueryUnitDataByKey(key string) (*models.UnitData, error) {
 		"`Key`=:Key",
 	}, " "))
 
+	err = ClearDestructibleUintData()
+	if err != nil {
+		return nil, err
+	}
+
 	data := new(models.UnitData)
 	err = stmp.Get(data, namedData)
 	if err != nil {
@@ -216,7 +174,7 @@ func QueryUnitDataByKey(key string) (*models.UnitData, error) {
 }
 
 // CreateUnitData 创建数据
-func CreateUnitData(body string, expirytime, destroytime, effectivetime time.Time) (int64, error) {
+func CreateUnitData(body string, effectivetime, expirytime, destroytime time.Time) (string, error) {
 	var err error
 	key, err := generateUniqueKey()
 	if err != nil {
@@ -241,14 +199,15 @@ func CreateUnitData(body string, expirytime, destroytime, effectivetime time.Tim
 
 	result, err := stmp.Exec(namedData)
 	if err != nil {
-		return 0, err
-	}
-	id, err := result.LastInsertId()
-	if err != nil {
-		return 0, err
+		return key, err
 	}
 
-	return id, nil
+	_, err = result.LastInsertId()
+	if err != nil {
+		return key, err
+	}
+
+	return key, nil
 }
 
 // UpdataUnitDataFieldByKey 根据 Key 更新指定字段
@@ -268,12 +227,6 @@ func UpdataUnitDataFieldByKey(key string, field map[string]interface{}) error {
 		"WHERE",
 		"`Key`=:Key",
 	}, " "))
-
-	// 修改前创建历史
-	err = CreateUnitDataHistory(key)
-	if err != nil {
-		return err
-	}
 
 	// 更新
 	field["Key"] = key
@@ -299,4 +252,25 @@ func UpdateUintDataDestroyTimeByKey(key string, destroyTime time.Time) error {
 // UpdateUintDataEffectiveTimeByKey 更新生效时间
 func UpdateUintDataEffectiveTimeByKey(key string, dataEffective time.Time) error {
 	return UpdataUnitDataFieldByKey(key, map[string]interface{}{"EffectiveTime": dataEffective})
+}
+
+// ClearDestructibleUintData 清空所有可以破坏、清除的单元数据
+func ClearDestructibleUintData() error {
+	stmp := sqldb.CreateNamedStmt(strings.Join([]string{
+		"DELETE FROM",
+		"`" + unitDataTableName + "`",
+		"WHERE",
+		"`DestroyTime` <= :CurrentTime",
+	}, " "))
+
+	namedData := map[string]interface{}{
+		"CurrentTime": time.Now(),
+	}
+
+	_, err := stmp.Exec(namedData)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

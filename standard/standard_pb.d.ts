@@ -7,17 +7,23 @@ export class UnitData extends jspb.Message {
   getBody(): string;
   setBody(value: string): void;
 
-  getExpirytime(): number;
-  setExpirytime(value: number): void;
+  getExpirytime(): string;
+  setExpirytime(value: string): void;
 
-  getCreatedtime(): number;
-  setCreatedtime(value: number): void;
+  getCreatedtime(): string;
+  setCreatedtime(value: string): void;
 
-  getDestroytime(): number;
-  setDestroytime(value: number): void;
+  getDestroytime(): string;
+  setDestroytime(value: string): void;
 
-  getEffectivetime(): number;
-  setEffectivetime(value: number): void;
+  getUpdatedtime(): string;
+  setUpdatedtime(value: string): void;
+
+  getDeletedtime(): string;
+  setDeletedtime(value: string): void;
+
+  getEffectivetime(): string;
+  setEffectivetime(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UnitData.AsObject;
@@ -32,10 +38,12 @@ export class UnitData extends jspb.Message {
 export namespace UnitData {
   export type AsObject = {
     body: string,
-    expirytime: number,
-    createdtime: number,
-    destroytime: number,
-    effectivetime: number,
+    expirytime: string,
+    createdtime: string,
+    destroytime: string,
+    updatedtime: string,
+    deletedtime: string,
+    effectivetime: string,
   }
 }
 

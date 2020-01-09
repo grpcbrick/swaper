@@ -84,7 +84,7 @@ func (srv *Service) CreateUnitData(ctx context.Context, req *standard.CreateUnit
 	}
 
 	if req.ExpiryTime == 0 {
-		// 默认生效后五分钟有效期
+		// 默认为生效后五分钟有效期
 		expiryTime = effectiveTime.Add(time.Minute * 5)
 	} else {
 		// 当前时间 + ExpiryTime/秒
@@ -99,7 +99,7 @@ func (srv *Service) CreateUnitData(ctx context.Context, req *standard.CreateUnit
 		destroyTime = now.Add(time.Duration(req.DestroyTime * time.Second.Nanoseconds()))
 	}
 
-	key, err := dao.CreateUnitData(req.Body, effectiveTime, destroyTime, expiryTime)
+	key, err := dao.CreateUnitData(req.Body, effectiveTime, expiryTime, destroyTime)
 	if err != nil {
 		resp.State = standard.State_DB_OPERATION_FATLURE
 		resp.Message = err.Error()
@@ -120,6 +120,19 @@ func (srv *Service) GetUnitDataByKey(ctx context.Context, req *standard.GetUnitD
 	if ok, msg := validators.Key(req.Key); ok != true {
 		resp.State = standard.State_PARAMS_INVALID
 		resp.Message = msg
+		return resp, nil
+	}
+
+	count, err := dao.CountUnitDataByKey(req.Key)
+	if err != nil {
+		resp.State = standard.State_DB_OPERATION_FATLURE
+		resp.Message = err.Error()
+		return resp, nil
+	}
+
+	if count <= 0 {
+		resp.State = standard.State_UNIT_DATA_NOT_EXIST
+		resp.Message = "该数据不存在"
 		return resp, nil
 	}
 
@@ -145,6 +158,19 @@ func (srv *Service) DestroyUnitDataByKey(ctx context.Context, req *standard.Dest
 		return resp, nil
 	}
 
+	count, err := dao.CountUnitDataByKey(req.Key)
+	if err != nil {
+		resp.State = standard.State_DB_OPERATION_FATLURE
+		resp.Message = err.Error()
+		return resp, nil
+	}
+
+	if count <= 0 {
+		resp.State = standard.State_UNIT_DATA_NOT_EXIST
+		resp.Message = "该数据不存在"
+		return resp, nil
+	}
+
 	err = dao.UpdateUintDataDestroyTimeByKey(req.Key, time.Now())
 	if err != nil {
 		resp.State = standard.State_DB_OPERATION_FATLURE
@@ -163,6 +189,19 @@ func (srv *Service) UpdateUnitDataBodyByKey(ctx context.Context, req *standard.U
 	if ok, msg := validators.Key(req.Key); ok != true {
 		resp.State = standard.State_PARAMS_INVALID
 		resp.Message = msg
+		return resp, nil
+	}
+
+	count, err := dao.CountUnitDataByKey(req.Key)
+	if err != nil {
+		resp.State = standard.State_DB_OPERATION_FATLURE
+		resp.Message = err.Error()
+		return resp, nil
+	}
+
+	if count <= 0 {
+		resp.State = standard.State_UNIT_DATA_NOT_EXIST
+		resp.Message = "该数据不存在"
 		return resp, nil
 	}
 
@@ -190,6 +229,19 @@ func (srv *Service) UpdateUnitDataExpiryTimeByKey(ctx context.Context, req *stan
 	if ok, msg := validators.ExpiryTime(req.Key); ok != true {
 		resp.State = standard.State_PARAMS_INVALID
 		resp.Message = msg
+		return resp, nil
+	}
+
+	count, err := dao.CountUnitDataByKey(req.Key)
+	if err != nil {
+		resp.State = standard.State_DB_OPERATION_FATLURE
+		resp.Message = err.Error()
+		return resp, nil
+	}
+
+	if count <= 0 {
+		resp.State = standard.State_UNIT_DATA_NOT_EXIST
+		resp.Message = "该数据不存在"
 		return resp, nil
 	}
 
@@ -221,6 +273,19 @@ func (srv *Service) UpdateUnitDataDestroyTimeByKey(ctx context.Context, req *sta
 		return resp, nil
 	}
 
+	count, err := dao.CountUnitDataByKey(req.Key)
+	if err != nil {
+		resp.State = standard.State_DB_OPERATION_FATLURE
+		resp.Message = err.Error()
+		return resp, nil
+	}
+
+	if count <= 0 {
+		resp.State = standard.State_UNIT_DATA_NOT_EXIST
+		resp.Message = "该数据不存在"
+		return resp, nil
+	}
+
 	destroyTime := time.Now().Add(time.Duration(req.DestroyTime * time.Second.Nanoseconds()))
 	err = dao.UpdateUintDataDestroyTimeByKey(req.Key, destroyTime)
 	if err != nil {
@@ -246,6 +311,19 @@ func (srv *Service) UpdateUnitDataEffectiveTimeByKey(ctx context.Context, req *s
 	if ok, msg := validators.EffectiveTime(req.Key); ok != true {
 		resp.State = standard.State_PARAMS_INVALID
 		resp.Message = msg
+		return resp, nil
+	}
+
+	count, err := dao.CountUnitDataByKey(req.Key)
+	if err != nil {
+		resp.State = standard.State_DB_OPERATION_FATLURE
+		resp.Message = err.Error()
+		return resp, nil
+	}
+
+	if count <= 0 {
+		resp.State = standard.State_UNIT_DATA_NOT_EXIST
+		resp.Message = "该数据不存在"
 		return resp, nil
 	}
 
